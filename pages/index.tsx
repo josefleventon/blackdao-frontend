@@ -109,6 +109,9 @@ const Home: NextPage = () => {
       onLoad={disconnect}
       className="w-screen min-h-screen overflow-x-hidden bg-black"
     >
+      <p className="absolute bottom-0 left-0 pb-2 pl-4 font-mono text-lg font-extrabold">
+        burn it all to the ground
+      </p>
       <nav className="fixed top-0 left-0 right-0">
         <div className="flex flex-row items-start justify-center h-24 max-w-4xl mx-auto">
           <a
@@ -138,6 +141,16 @@ const Home: NextPage = () => {
               <p className="text-xl font-semibold">TEAM BLUE</p>
               {wallet && <p>{blueBalance} $BLUE</p>}
             </div>
+          </a>
+        </div>
+        <div className="flex flex-row justify-center w-screen mt-6">
+          <a
+            href="https://daodao.zone/dao/juno1xcj8fdlu5090440kxf2zd2etskflf39lxl0fl3rnjr4vkklcflmsac7kth"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="font-mono text-lg text-center text-white underline cursor-pointer "
+          >
+            BLACK DAO 🔗
           </a>
         </div>
       </nav>
