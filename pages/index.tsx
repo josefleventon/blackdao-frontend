@@ -90,6 +90,7 @@ const Home: NextPage = () => {
         cosmWasmClient,
         process.env.NEXT_PUBLIC_BLACK_CONTRACT_ADDRESS!,
       )
+
       try {
         const redBal = await redClient.balance({ address })
         const blueBal = await blueClient.balance({ address })
@@ -98,7 +99,9 @@ const Home: NextPage = () => {
         setRedBalance(parseInt(redBal.balance) / 1_000_000)
         setBlueBalance(parseInt(blueBal.balance) / 1_000_000)
         setBlackBalance(parseInt(blackBal.balance) / 1_000_000)
-      } catch {}
+      } catch {
+        revalidate()
+      }
     }
 
     effect()
@@ -110,7 +113,15 @@ const Home: NextPage = () => {
       className="w-screen min-h-screen overflow-x-hidden bg-black"
     >
       <p className="absolute bottom-0 left-0 pb-2 pl-4 font-mono text-lg font-extrabold">
-        burn it all to the ground
+        burn it all to the ground //{' '}
+        <a
+          href="https://juno.tools/airdrops/"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="underline cursor-pointer"
+        >
+          airdrops
+        </a>
       </p>
       <nav className="fixed top-0 left-0 right-0">
         <div className="flex flex-row items-start justify-center h-24 max-w-4xl mx-auto">
